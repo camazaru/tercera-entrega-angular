@@ -8,7 +8,9 @@ import { EliminarComponent } from './pages/eliminar/eliminar.component';
 
 const routes: Routes = [
 
-  { path: 'agregar', component: AgregarComponent },
+  { path: 'agregar', component: AgregarComponent,
+
+  },
   { path: 'actualizar', component: ModificarComponent },
   { path: 'listar', component: ListarComponent },
   { path: 'buscar', component: BuscarComponent },
