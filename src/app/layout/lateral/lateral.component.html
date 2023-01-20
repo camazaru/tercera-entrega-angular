@@ -1,0 +1,29 @@
+
+        <mat-nav-list>
+            <mat-list-item routerLink="home">
+                <mat-icon>dashboard</mat-icon><span>Home</span>
+            </mat-list-item>
+            
+            
+            <mat-expansion-panel [class.mat-elevation-z0]="true">
+                <mat-expansion-panel-header >
+                    Alumnos
+                </mat-expansion-panel-header>
+                
+                <mat-nav-list class="d" >
+                    <a mat-list-item routerLink="#">
+                        <mat-icon>add_circle</mat-icon><span>Agregar</span>
+                    </a>
+                    <a mat-list-item routerLink="#">
+                        <mat-icon>update</mat-icon><span>Actualizar</span>
+                    </a>
+                    <a mat-list-item routerLink="#">
+                        <mat-icon>list</mat-icon><span>Listar</span>
+                    </a>
+                    <a mat-list-item routerLink="#">
+                        <mat-icon>delete</mat-icon><span>Eliminar</span>
+                    </a>
+                </mat-nav-list>
+            
+
+  
