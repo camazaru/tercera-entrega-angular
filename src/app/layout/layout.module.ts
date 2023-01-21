@@ -7,11 +7,6 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { AppRoutingModule } from '../app-routing.module';
 
-
-
-
-
-
 @NgModule({
   declarations: [
     BodyComponent,
@@ -23,7 +18,8 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     CommonModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
     
 
   ], exports: [

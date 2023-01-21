@@ -9,7 +9,7 @@ import { LayoutModule } from './layout/layout.module';
 import { EstudiantesModule } from './estudiantes/estudiantes.module';
 import { PublicModule } from './public/public.module';
 import { AuthModule } from './auth/auth.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -26,9 +26,13 @@ import { AuthModule } from './auth/auth.module';
     LayoutModule,
     EstudiantesModule,
     PublicModule,
-    AuthModule
+    AuthModule,
+    HttpClientModule
+    
    
   ],
+  exports: [],
+
   providers: [],
   bootstrap: [AppComponent]
 })

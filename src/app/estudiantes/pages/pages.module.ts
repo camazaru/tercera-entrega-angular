@@ -5,6 +5,7 @@ import { BuscarComponent } from './buscar/buscar.component';
 import { ListarComponent } from './listar/listar.component';
 import { ModificarComponent } from './modificar/modificar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 
 
@@ -14,10 +15,20 @@ import { EliminarComponent } from './eliminar/eliminar.component';
     BuscarComponent,
     ListarComponent,
     ModificarComponent,
-    EliminarComponent
+    EliminarComponent,
+    
   ],
   imports: [
+    MaterialModule,
     CommonModule
-  ]
+  ],
+  exports: [
+    AgregarComponent,
+    BuscarComponent,
+    ListarComponent,
+    ModificarComponent,
+    EliminarComponent,
+  ],
+  
 })
 export class PagesModule { }

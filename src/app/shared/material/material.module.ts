@@ -20,7 +20,21 @@ import { MatTooltipModule} from '@angular/material/tooltip'
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatInputModule,
+    MatListModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatExpansionModule,
+    MatMenuModule,
+    MatTooltipModule
   ],
   exports: [
     MatAutocompleteModule,

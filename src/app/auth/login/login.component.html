@@ -4,7 +4,7 @@
             <div class="titulo">
                 Bienvenido
             </div>
-            <form [formGroup]="formLogin" >
+            <form [formGroup]="formLogin">
                 <input type="text" placeholder="Usuario" required formControlName="usuario">
                 
                 <input type="password" placeholder="Contraseña" required formControlName="password" >
@@ -13,7 +13,7 @@
             </form>
             <div class="pie-form">
                 <a href="#">¿Perdiste tu contraseña?</a>
-                <a href="#">¿No tienes Cuenta? Registrate</a>
+                <a routerLink="/auth/register">¿No tienes Cuenta? Registrate</a>
             </div>
         </div>
 
