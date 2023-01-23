@@ -10,6 +10,10 @@ import { EstudiantesModule } from './estudiantes/estudiantes.module';
 import { PublicModule } from './public/public.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 
@@ -27,7 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
     EstudiantesModule,
     PublicModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage())
     
    
   ],

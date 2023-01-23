@@ -4,9 +4,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
 
+
 const routes: Routes = [
  
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'register', component: RegistroComponent },
   { path: '**', component: LoginComponent },
 

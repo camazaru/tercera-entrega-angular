@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MockamockapiService } from '../../../services/mockamockapi.service';
 
-
-
-
-
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',

@@ -4,8 +4,8 @@
             <div class="titulo">
                 Registro user
             </div>
-            <form [formGroup]="formReg">
-                <input type="text"  placeholder="Usuario" required formControlName="usuario">
+            <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+                <input type="text"  placeholder="Email" required formControlName="email">
                 
                 <input type="password" placeholder="Contraseña"  required formControlName="password" >
                 

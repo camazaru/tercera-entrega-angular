@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,  } from '@angular/forms';
+import { UserService } from 'src/app/services/users.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-registro',
@@ -9,10 +12,12 @@ import { FormControl, FormGroup,  } from '@angular/forms';
 export class RegistroComponent implements OnInit {
 
   formReg: FormGroup;
+  
 
-  constructor() {
+  constructor(private userService: UserService,
+    private router: Router) {
     this.formReg= new FormGroup({
-      usuario: new FormControl(),
+      email: new FormControl(),
       password: new FormControl()
       
           })
@@ -22,5 +27,12 @@ export class RegistroComponent implements OnInit {
   }
 
   onSubmit() {
+    this.userService.register(this.formReg.value)
+      .then(response => {
+        console.log(response);
+        this.router.navigate(['/auth/login'])
+      })
+      .catch(error => console.log(error));
   }
+
 }

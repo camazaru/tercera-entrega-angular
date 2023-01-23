@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,  } from '@angular/forms';
-import { MockamockapiService } from '../../services/mockamockapi.service';
-
+import { UserService } from '../../services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,38 +11,41 @@ import { MockamockapiService } from '../../services/mockamockapi.service';
 export class LoginComponent implements OnInit {
 
   formLogin: FormGroup;
-  userList: any = [];
-
-  constructor( private mockamockapiService:MockamockapiService ) 
-  
-  {     
-    this.formLogin= new FormGroup({
-      usuario: new FormControl(),
-      password: new FormControl()
-   })
-
-   this.mockamockapiService.getUsers()
-        .subscribe( response => {
-          console.log(response)
-          this.userList= response
-            }             
-        )
-  }
-
+  constructor(
+    private userService: UserService,
+    private router: Router
+    ) {
+      this.formLogin= new FormGroup({
+        email: new FormControl(),
+        password: new FormControl()
+     })
+    }
 
   ngOnInit(): void {
-    
   }
 
   onSubmit() {
 
+  
+    this.userService.login(this.formLogin.value)
+    
+      .then(response => {
+        console.log(response);
+        this.router.navigate(['/estudiantes/listar']);
+      })
+      .catch(() => this.router.navigate(['/auth/register']));
+      
   }
 
-login(){
- 
-
-}
-  
-  
+  onClick() {
+    this.userService.loginWithGoogle()
+      .then(response => {
+        console.log(response);
+        this.router.navigate(['/inicio']);
+      })
+      .catch(error => console.log(error)
+      )
+      
+  }
 
 }
