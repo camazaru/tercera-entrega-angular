@@ -1,1 +1,21 @@
-<p>agregar works!</p>
+<div id="contenedor" class="m-4">
+    <div id="central">
+        <div id="login">
+            <div class="titulo">
+                Agregar Alumno a la BD
+            </div>
+            <form [formGroup]="formAdd">
+                <input type="text" placeholder="Nombre Completo" required formControlName="nombre">
+                
+                <input type="email" placeholder="Email" required formControlName="correo" >
+
+                <input type="text" placeholder="Imagen" required formControlName="imagen" >
+                <input type="text" placeholder="Estado Alumno" required formControlName="activo" >
+                                
+                <button type="submit" title="Ingresar" name="Ingresar" value="enviar" (click)="add()">Agregar</button>
+            </form>
+           
+        </div>
+
+    </div>
+</div>

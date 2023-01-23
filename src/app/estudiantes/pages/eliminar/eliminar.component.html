@@ -1,1 +1,17 @@
-<p>eliminar works!</p>
+<div id="contenedor" class="m-4">
+    <div id="central">
+        <div id="login">
+            <div class="titulo">
+                Ingresa el ID del alumo a eliminar
+            </div>
+            <form [formGroup]="formEliminar">
+                <input type="text" placeholder="ID Alumno" required formControlName="id">
+                
+                                              
+                <button type="submit" title="Ingresar" name="Ingresar" value="enviar" (click)="eliminar()">Agregar</button>
+            </form>
+           
+        </div>
+
+    </div>
+</div>

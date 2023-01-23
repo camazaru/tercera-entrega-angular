@@ -1,1 +1,21 @@
-<p>buscar works!</p>
+<div id="contenedor" class="m-4">
+    <div id="central">
+        <div id="login">
+            <div class="titulo">
+                Ingresa informacion a Buscar
+            </div>
+            <form [formGroup]="formBuscar">
+                <input type="text" placeholder="Nombre Completo" required formControlName="nombre">
+                
+                <input type="email" placeholder="Email" required formControlName="correo" >
+
+                <input type="text" placeholder="Imagen" required formControlName="imagen" >
+                <input type="text" placeholder="Estado Alumno" required formControlName="activo" >
+                                
+                <button type="submit" title="Ingresar" name="Ingresar" value="enviar" (click)="buscar()">Agregar</button>
+            </form>
+           
+        </div>
+
+    </div>
+</div>

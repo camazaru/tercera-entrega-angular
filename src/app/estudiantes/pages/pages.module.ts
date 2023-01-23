@@ -6,7 +6,7 @@ import { ListarComponent } from './listar/listar.component';
 import { ModificarComponent } from './modificar/modificar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +20,10 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
   ],
   imports: [
     MaterialModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ],
   exports: [
     AgregarComponent,

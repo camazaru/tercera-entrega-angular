@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EstudiantesRoutingModule } from './estudiantes-routing.module';
 import { PagesModule } from './pages/pages.module';
-
+import { MaterialModule } from '../shared/material/material.module';
 
 
 @NgModule({
@@ -13,8 +13,8 @@ import { PagesModule } from './pages/pages.module';
     CommonModule,
     EstudiantesRoutingModule,
     PagesModule,
-     
-    
+    MaterialModule,
+   
   ],
   exports:
  [

@@ -11,10 +11,7 @@ export class ListarComponent implements OnInit {
   estudiantesList: any;
 
   constructor( private mockamockapiService: MockamockapiService) {
-
- 
    }
-
 
   ngOnInit(): void {
    
@@ -22,9 +19,4 @@ this.mockamockapiService.getEstudiantes()
 .subscribe((response:any) => this.estudiantesList = response)
 
 }
-
-
-
-
-
 }
