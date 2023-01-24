@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,  } from '@angular/forms';
-import { UserService } from '../../../services/users.service';
+import { EstudiantesService } from 'src/app/services/estudiantes.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,14 +8,18 @@ import { Router } from '@angular/router';
   templateUrl: './modificar.component.html',
   styleUrls: ['./modificar.component.css']
 })
-export class ModificarComponent implements OnInit { formModificar: FormGroup;
+export class ModificarComponent implements OnInit { 
 
+  formPut: FormGroup;
+
+  EstudiantesService: any;
+  
   constructor(
-    private userService: UserService,
+    private estudiantesService: EstudiantesService,
     private router: Router
     ) {
-      this.formModificar= new FormGroup({
-        id: new FormControl(),
+      this.formPut= new FormGroup({
+        nombre: new FormControl(),
         correo: new FormControl(),
         imagen: new FormControl(),
         activo: new FormControl(),
@@ -25,11 +29,25 @@ export class ModificarComponent implements OnInit { formModificar: FormGroup;
   ngOnInit(): void {
   }
 
-  modificar (){
+  putForm(form: any){
+  this.estudiantesService.putEstudiante(form).subscribe(data => {
+    console.log(data)
+  })
 
-  console.log(this.formModificar.value)
- }
+  }
 
-  
+  salir(){
+    this.router.navigate(['home']);
+  }
+
+editarEstudiante(id: any){
+  this.router.navigate(['modificar', id])
+}
+
+
+nuevoEstudiante(){
+  this.router.navigate(['nuevo'])
+}
+
 
 }
