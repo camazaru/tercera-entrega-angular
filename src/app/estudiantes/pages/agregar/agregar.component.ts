@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,  } from '@angular/forms';
-import { UserService } from '../../../services/users.service';
+import { EstudiantesService } from '../../../services/estudiantes.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 export class AgregarComponent implements OnInit {
 
   formAdd: FormGroup;
+  EstudiantesService: any;
   constructor(
-    private userService: UserService,
+    private estudiantesService: EstudiantesService,
     private router: Router
     ) {
       this.formAdd= new FormGroup({
@@ -26,9 +27,11 @@ export class AgregarComponent implements OnInit {
   ngOnInit(): void {
   }
 
- add(){
+ public add(){
+this.EstudiantesService.post(`https://63c8613c075b3f3a91dfe65f.mockapi.io/users`, 
+this.formAdd.value
+)
 
-  console.log(this.formAdd.value)
  }
 
   

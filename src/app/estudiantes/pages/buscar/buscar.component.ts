@@ -16,10 +16,8 @@ export class BuscarComponent implements OnInit {
     private router: Router
     ) {
       this.formBuscar= new FormGroup({
-        nombre: new FormControl(),
-        correo: new FormControl(),
-        imagen: new FormControl(),
-        activo: new FormControl(),
+        id: new FormControl(),
+    
      })
     }
 
@@ -28,7 +26,6 @@ export class BuscarComponent implements OnInit {
 
  buscar (){
 
-  console.log(this.formBuscar.value)
  }
 
   

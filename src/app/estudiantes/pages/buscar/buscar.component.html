@@ -2,20 +2,17 @@
     <div id="central">
         <div id="login">
             <div class="titulo">
-                Ingresa informacion a Buscar
+                Ingresa el ID del alumno a buscar
             </div>
-            <form [formGroup]="formBuscar">
-                <input type="text" placeholder="Nombre Completo" required formControlName="nombre">
+            <form [formGroup]="formBuscar" (click)="buscar()">
+                <input type="text" placeholder="ID Alumno" required formControlName="id">
                 
-                <input type="email" placeholder="Email" required formControlName="correo" >
-
-                <input type="text" placeholder="Imagen" required formControlName="imagen" >
-                <input type="text" placeholder="Estado Alumno" required formControlName="activo" >
-                                
-                <button type="submit" title="Ingresar" name="Ingresar" value="enviar" (click)="buscar()">Agregar</button>
+                                              
+                <button type="submit" title="Ingresar" name="Ingresar">Busqueda</button>
             </form>
            
         </div>
 
     </div>
 </div>
+
