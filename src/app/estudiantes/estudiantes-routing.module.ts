@@ -19,6 +19,7 @@ const routes: Routes = [
   ...canActivate(() => redirectUnauthorizedTo(['/auth/login'])) },
   { path: 'eliminar', component: EliminarComponent,
   ...canActivate(() => redirectUnauthorizedTo(['/auth/login'])) },
+  
   { path: '**', component: ListarComponent },
   
 ];

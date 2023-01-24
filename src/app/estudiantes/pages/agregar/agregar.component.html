@@ -4,15 +4,17 @@
             <div class="titulo">
                 Agregar Alumno a la BD
             </div>
-            <form [formGroup]="formAdd" >
+            <form [formGroup]="formAdd" (ngSubmit) = "postForm(formAdd.value)">
                 <input type="text" placeholder="Nombre Completo" required formControlName="nombre">
                 
                 <input type="email" placeholder="Email" required formControlName="correo" >
 
                 <input type="text" placeholder="Imagen" required formControlName="imagen" >
                 <input type="text" placeholder="Estado Alumno" required formControlName="activo" >
-                                
-                <button type="submit" title="Ingresar" name="Ingresar" (click)="add()">Agregar</button>
+                  <div>              
+                <button type="submit" title="Ingresar" name="Ingresar">Agregar</button>
+                <button (click)="salir()">Salir</button>
+            </div>
             </form>
            
         </div>

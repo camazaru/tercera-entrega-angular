@@ -3,6 +3,7 @@ import { FormControl, FormGroup,  } from '@angular/forms';
 import { EstudiantesService } from '../../../services/estudiantes.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
@@ -11,7 +12,9 @@ import { Router } from '@angular/router';
 export class AgregarComponent implements OnInit {
 
   formAdd: FormGroup;
+
   EstudiantesService: any;
+  
   constructor(
     private estudiantesService: EstudiantesService,
     private router: Router
@@ -27,13 +30,16 @@ export class AgregarComponent implements OnInit {
   ngOnInit(): void {
   }
 
- public add(){
-this.EstudiantesService.post(`https://63c8613c075b3f3a91dfe65f.mockapi.io/users`, 
-this.formAdd.value
-)
+  postForm(form: any){
 
- }
+   this.estudiantesService.postEstudiante(form).subscribe(data => {
+ console.log(data)
+   })
 
-  
+  }
+
+  salir(){
+    this.router.navigate(['home']);
+  }
 
 }
