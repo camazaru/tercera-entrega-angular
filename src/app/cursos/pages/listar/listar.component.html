@@ -9,19 +9,18 @@
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Correo</th>
+          <th scope="col">Precio</th>
           <th scope="col">Imagen</th>
-          <th scope="col">Activo</th>
-          
+             
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let curso of cursosList" (click)="editarCurso(curso.id)">
           <th scope="row">{{curso.id}}</th>
           <td>{{curso.nombre}}</td>
-          <td>{{curso.correo}}</td>
+          <td>{{curso.precio}}</td>
           <td>{{curso.imagen}}</td>
-          <td>{{curso.activo}}</td>
+
   
         </tr>
        

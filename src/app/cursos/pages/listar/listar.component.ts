@@ -18,11 +18,10 @@ export class ListarComponent implements OnInit {
 this.api.getAllCursos().subscribe( data => {
 
   this.cursosList=data
+
 })
 
-
-
-}
+  }
 
 nuevoCurso(){
   this.router.navigate(['/cursos/agregar'])

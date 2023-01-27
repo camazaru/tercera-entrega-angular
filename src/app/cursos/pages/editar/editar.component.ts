@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CursosService } from '../../../services/cursos/cursos.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editar',
@@ -7,9 +10,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarComponent implements OnInit {
 
-  constructor() { }
+ 
+  constructor(private activerouter:ActivatedRoute, private router:Router, private api:CursosService) { }
+
+datosCurso: any;
+
+  editarForm= new FormGroup({
+  nombre: new FormControl(),
+  precio: new FormControl(),
+  imagen: new FormControl(),
+ 
+})
 
   ngOnInit(): void {
+    let cursoid = this.activerouter.snapshot.paramMap.get('id');
+    
+    this.api.getSingleCurso(cursoid).subscribe(data => {
+      
+      this.datosCurso = data[0];
+
+      this.editarForm.setValue({
+        'nombre': this.datosCurso.nombre,
+        'precio': this.datosCurso.precio,
+        'imagen': this.datosCurso.imagen,
+        })
+    })
   }
 
+  postForm(form:any){
+    let cursoid = this.activerouter.snapshot.paramMap.get('id');
+    this.api.putCurso(form, cursoid).subscribe()
+
 }
+
+eliminar(){
+  let cursoid = this.activerouter.snapshot.paramMap.get('id');
+  this.api.delete(cursoid).subscribe()
+    
+  }
+
+
+salir(){
+  this.router.navigate(['cursos/listar'])
+}}
+

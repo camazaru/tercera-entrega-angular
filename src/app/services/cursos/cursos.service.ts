@@ -30,13 +30,13 @@ export class CursosService {
      }
 
      putCurso(form:any, cursoid:any):Observable<any>{
-      let direccion = this.url + "estudiantes/" + cursoid
+      let direccion = this.url + "cursos/" + cursoid
     return this.http.put<any>(direccion, form)
     
     }
 
     delete(cursoid:any ):Observable<any>{
-      let direccion = this.url + "estudiantes/" + cursoid
+      let direccion = this.url + "cursos/" + cursoid
      
       return this.http.delete<any>(direccion, cursoid)
     }

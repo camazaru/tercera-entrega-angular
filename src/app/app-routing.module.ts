@@ -19,18 +19,21 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
- 
+  {
+    path: 'cursos',
+    loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule)
+  },
+  {
+    path: 'inscripciones',
+    loadChildren: () => import('./inscripciones/inscripciones.module').then(m => m.InscripcionesModule)
+  },
 
   {
     path: '**', redirectTo: 'home'
     
   },
 
-  {
-    path: 'cursos',
-    loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule)
-  },
-
+ 
 
   
 ];
