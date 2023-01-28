@@ -33,7 +33,7 @@ export class AgregarComponent implements OnInit {
 
   postForm(form: any){
     this.api.postEstudiante(form).subscribe(data => {
-      
+      this.router.navigate(['estudiantes/listar'])
         })
   }
  

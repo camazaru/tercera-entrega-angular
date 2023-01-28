@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup,  } from '@angular/forms';
 import { UserService } from '../../services/user/user.service'
 import { Router } from '@angular/router';
@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+
+
   formLogin: FormGroup;
+  
   constructor(
     private userService: UserService,
     private router: Router
@@ -32,6 +35,7 @@ export class LoginComponent implements OnInit {
       .then(response => {
         console.log(response);
         this.router.navigate(['/estudiantes/listar']);
+
       })
       .catch(() => this.router.navigate(['/auth/register']));
       

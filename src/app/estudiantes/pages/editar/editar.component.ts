@@ -40,12 +40,14 @@ datosEstudiante: any;
   postForm(form:any){
     let estudianteid = this.activerouter.snapshot.paramMap.get('id');
     this.api.putEstudiante(form, estudianteid).subscribe()
+    this.router.navigate(['estudiantes/listar'])
 
 }
 
 eliminar(){
   let estudianteid = this.activerouter.snapshot.paramMap.get('id');
   this.api.delete(estudianteid).subscribe()
+  this.router.navigate(['estudiantes/listar'])
     
   }
 

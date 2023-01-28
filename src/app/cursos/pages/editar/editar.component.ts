@@ -40,12 +40,14 @@ datosCurso: any;
   postForm(form:any){
     let cursoid = this.activerouter.snapshot.paramMap.get('id');
     this.api.putCurso(form, cursoid).subscribe()
+    this.router.navigate(['cursos/listar'])
 
 }
 
 eliminar(){
   let cursoid = this.activerouter.snapshot.paramMap.get('id');
   this.api.delete(cursoid).subscribe()
+  this.router.navigate(['cursos/listar'])
     
   }
 

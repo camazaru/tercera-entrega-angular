@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AgregarComponent implements OnInit {
   formAdd: FormGroup;
 
-  ApiService: any;
+  CursosService: any;
   
   constructor(
     private api: CursosService,
@@ -30,7 +30,7 @@ export class AgregarComponent implements OnInit {
 
   postForm(form: any){
     this.api.postCurso(form).subscribe(data => {
-      
+      this.router.navigate(['cursos/listar'])
         })
   }
  
