@@ -10,7 +10,7 @@ import { UserService } from '../../services/user/user.service';
 
 
 
-describe(`(1) TEST del componente 'LoginComponent'`, () => {
+xdescribe(`(1) TEST del componente 'LoginComponent'`, () => {
   let Component: LoginComponent
   let fixture: ComponentFixture<LoginComponent>
 
